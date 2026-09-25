@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    border-color: #292a2b;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  html, body, #root {
+    min-height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #121315;
+    color: #e3e2e3;
+    font-family: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  /* Universal Dark Inputs - Prevents browser default white background */
+  input, textarea, select {
+    background-color: #0d0e0f !important;
+    color: #ffffff !important;
+    border-color: #292a2b !important;
+  }
+
+  input::placeholder, textarea::placeholder {
+    color: #8f9194 !important;
+    opacity: 0.8 !important;
+  }
+
+  input:focus, textarea:focus, select:focus {
+    background-color: #1f2021 !important;
+    border-color: rgba(68, 226, 205, 0.6) !important;
+    outline: none !important;
+    box-shadow: 0 0 0 1px rgba(68, 226, 205, 0.4) !important;
+  }
+
+  /* Prevent Chrome / Edge autofill turning background white */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus {
+    -webkit-text-fill-color: #ffffff !important;
+    -webkit-box-shadow: 0 0 0px 1000px #0d0e0f inset !important;
+    box-shadow: 0 0 0px 1000px #0d0e0f inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}
+
+/* Custom terminal scrollbars */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #121315;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #292a2b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #38393a;
+}
+
+/* Monospace Tabular Figures */
+.mono-numbers {
+  font-family: 'JetBrains Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
